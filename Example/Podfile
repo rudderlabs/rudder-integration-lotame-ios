@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'Rudder-Lotame_Example' do
+  pod 'Rudder-Lotame', :path => '../'
+
+  target 'Rudder-Lotame_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
