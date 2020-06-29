@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (id)getInstance:(NSDictionary *)fieldMappings withLogLevel:(int)logLevel;
 + (void)registerCallback:(void(^)(void))onSyncCallback;
-- (void)syncDspUrls:(NSArray *)dspUrls withUserId:(NSString *)userId;
-- (void)processBcpUrls:(NSArray *)bcpUrls withDspUrls:(NSArray *)dspUrls withUserId:(NSString *)userId;
+- (void)syncDspUrls:(NSArray *)dspUrls withUserId:(NSString *)userId withForceSync:(Boolean)force;
+- (void)syncBcpAndDspUrls:(NSString *)userId withBcpUrls:(NSArray *)bcpUrls withDspUrls:(NSArray *)dspUrls;
 - (void)reset;
 @end
 

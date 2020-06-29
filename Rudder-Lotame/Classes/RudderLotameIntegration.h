@@ -2,7 +2,7 @@
 //  RudderLotameIntegration.h
 //  Lotame
 //
-//  Created by Ruchira Moitra on 02/04/20.
+//  Created by Dhawal on 10/06/20.
 //
 
 #import <Foundation/Foundation.h>

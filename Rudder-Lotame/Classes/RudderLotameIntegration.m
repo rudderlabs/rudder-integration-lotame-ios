@@ -2,12 +2,11 @@
 //  RudderLotameIntegration.m
 //  Lotame
 //
-//  Created by Ruchira Moitra on 02/04/20.
+//  Created by Dhawal on 10/06/20.
 //
 
 #import "RudderLotameIntegration.h"
 #import "RudderLogger.h"
-#import "LotameUtils.h"
 #import "LotameIntegration.h"
 #import "LotameLogger.h"
 
@@ -25,12 +24,9 @@ static LotameIntegration* lotameClient;
         if (config != nil) {
             [RudderLogger logDebug:@"Initializing Lotame SDK"];
             
-            NSDictionary* mappings;
-            bcpUrls = [LotameUtils getUrlConfig:@"bcp" withConfig:config];
-            dspUrls = [LotameUtils getUrlConfig:@"dsp" withConfig:config];
-            mappings = [LotameUtils getMappingConfig:config];
-            
-            lotameClient = [LotameIntegration getInstance:mappings withLogLevel:[rudderConfig logLevel]];
+            bcpUrls = [self getUrlConfig:@"bcp" withConfig:config];
+            dspUrls = [self getUrlConfig:@"dsp" withConfig:config];
+            lotameClient = [LotameIntegration getInstance:[self getMappingConfig:config] withLogLevel:[rudderConfig logLevel]];
         }
     }
     return self;
@@ -50,27 +46,91 @@ static LotameIntegration* lotameClient;
 }
 
 - (void) processRudderEvent: (nonnull RudderMessage *) message {
-    NSString *type = message.type;
+    NSString* type = message.type;
+    NSString* userId = [message userId];
     
-    if ([type isEqualToString:@"identify"]) {
-        NSString* userId = [message userId];
-        if (userId != nil) {
-            [lotameClient syncDspUrls:dspUrls withUserId:userId];
-        } else {
-            [RudderLogger logWarn:@"RudderIntegration: Lotame: identify: no userId found, not syncing any pixels" ];
+    if (type != nil) {
+        if ([type isEqualToString:@"screen"]){
+            if (userId != nil) {
+                [lotameClient syncBcpAndDspUrls:userId withBcpUrls:bcpUrls withDspUrls:dspUrls];
+            } else {
+                [RudderLogger logWarn:@"RudderIntegration: Lotame: screen: no userId found, not syncing any pixels" ];
+            }
         }
-    }
-    else if ([type isEqualToString:@"screen"]){
-        [lotameClient processBcpUrls:bcpUrls withDspUrls:dspUrls withUserId:[message userId]];
-    }
-    else {
-        [RudderLogger logDebug: [[NSString alloc] initWithFormat:@"RudderIntegration: Lotame: Message Type %@ not supported", type]] ;
+        else if ([type isEqualToString:@"identify"]) {
+            if (userId != nil) {
+                [lotameClient syncDspUrls:dspUrls withUserId:userId withForceSync:true];
+            } else {
+                [RudderLogger logWarn:@"RudderIntegration: Lotame: identify: no userId found, not syncing any pixels" ];
+            }
+        }
+        else {
+            [RudderLogger logDebug: [[NSString alloc] initWithFormat:@"RudderIntegration: Lotame: Message Type %@ not supported", type]] ;
+        }
+    } else {
+        [RudderLogger logDebug:@"RudderIntegration: Lotame: processEvent: eventType null"];
     }
 }
 
-
 - (void)reset {
     [lotameClient reset];
+}
+
+- (NSArray *)convertArrayOfDictsToArray:(NSString *)urlType withArray:(NSMutableArray *)arrayOfDicts {
+    NSString* urlKey = [[NSString alloc] initWithFormat:@"%@UrlTemplate", urlType ];
+    NSMutableArray* list = [[NSMutableArray alloc] init];
+    NSString *value;
+    
+    for(NSDictionary* url in arrayOfDicts) {
+        value = [url objectForKey:urlKey];
+        if (value != nil && [value length] > 0) {
+            [list addObject:value];
+        }
+    }
+    return [list count] > 0 ? list : nil;
+}
+
+- (NSDictionary *)convertArrayOfDictsToDict:(NSArray *)arrayOfDicts {
+    NSMutableDictionary* map = [[NSMutableDictionary alloc] init];
+    NSString *key, *value;
+    
+    for(NSDictionary* node in arrayOfDicts) {
+        key = [node objectForKey:@"key"];
+        value = [node objectForKey:@"value"];
+        if ((key != nil && [key length] > 0) && (value != nil && [value length] > 0)) {
+            [map setObject:value forKey:key];
+        }
+    }
+    return [map count] > 0 ? map : nil;
+}
+
+- (NSArray *)getUrlConfig:(NSString *)urlType withConfig:(NSDictionary *)configMap {
+    NSString* iFrameKey = [[NSString alloc] initWithFormat:@"%@UrlSettingsIframe", urlType];
+    NSString* pixelKey = [[NSString alloc] initWithFormat:@"%@UrlSettingsPixel", urlType];
+    
+    NSMutableArray* iFrames = [configMap objectForKey:iFrameKey];
+    NSMutableArray* pixels = [configMap objectForKey:pixelKey];
+    
+    NSMutableArray* urlList = nil;
+    if (pixels != nil && iFrames != nil) {
+        urlList = pixels;
+        [urlList addObjectsFromArray:iFrames];
+    } else if (pixels != nil && iFrames == nil) {
+        urlList = pixels;
+    } else if (pixels == nil && iFrames != nil) {
+        urlList = iFrames;
+    } else {
+        return nil;
+    }
+    
+    return [self convertArrayOfDictsToArray:urlType withArray:urlList];
+}
+
+- (NSDictionary *)getMappingConfig:(NSDictionary *)configMap {
+    NSArray* arrayOfMappings = [configMap objectForKey:@"mappings"];
+    if (arrayOfMappings ==  nil) return nil;
+    
+    return [self convertArrayOfDictsToDict:arrayOfMappings];
 }
 
 @end

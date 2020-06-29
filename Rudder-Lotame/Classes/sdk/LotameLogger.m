@@ -40,31 +40,31 @@ int const LotameLogLevelNone = 0;
 
 + (void)logVerbose:(NSString *)message {
     if (logLevel >= LotameLogLevelVerbose) {
-        NSLog(@"%@:Verbose:%@", TAG, message);
+        NSLog(@"%@: Verbose: %@", TAG, message);
     }
 }
 
 + (void)logDebug:(NSString *)message {
     if (logLevel >= LotameLogLevelDebug) {
-        NSLog(@"%@:Debug:%@", TAG, message);
+        NSLog(@"%@: Debug: %@", TAG, message);
     }
 }
 
 + (void)logInfo:(NSString *)message {
     if (logLevel >= LotameLogLevelInfo) {
-        NSLog(@"%@:Info:%@", TAG, message);
+        NSLog(@"%@: Info: %@", TAG, message);
     }
 }
 
 + (void)logWarn:(NSString *)message {
     if (logLevel >= LotameLogLevelWarning) {
-        NSLog(@"%@:Warn:%@", TAG, message);
+        NSLog(@"%@: Warn: %@", TAG, message);
     }
 }
 
 + (void)logError:(NSString *)message {
     if (logLevel >= LotameLogLevelError) {
-        NSLog(@"%@:Error:%@", TAG, message);
+        NSLog(@"%@: Error: %@", TAG, message);
     }
 }
 
