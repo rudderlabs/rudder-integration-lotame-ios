@@ -32,7 +32,7 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'Rudder-Lotame/Classes/**/*'
   
-  s.dependency 'Rudder', '1.0.1-beta.4'
+  s.dependency 'Rudder'
   # s.resource_bundles = {
   #   'Rudder-Lotame' => ['Rudder-Lotame/Assets/*.png']
   # }

@@ -140,17 +140,26 @@ static dispatch_queue_t requestQueue;
     return ^{
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
         [request setHTTPMethod:@"GET"];
+        
+        // checking for URL validity
+        if(![NSURLConnection canHandleRequest:request]) {
+            [LotameLogger logError:[NSString stringWithFormat:@"Invalid URL: %@", url]];
+        }
 
         NSError *error = nil;
         NSHTTPURLResponse *response = nil;
 
         [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-
-        int responseCode = (int) [response statusCode];
-        if (responseCode < 400) {
-            [LotameLogger logDebug:[NSString stringWithFormat:@"GET request to %@ returned a %d response", url, responseCode]];
+        
+        if(error == nil) {
+            int responseCode = (int) [response statusCode];
+            if (responseCode < 400) {
+                [LotameLogger logDebug:[NSString stringWithFormat:@"GET request to %@ returned a %d response", url, responseCode]];
+            } else {
+                [LotameLogger logError:[NSString stringWithFormat:@"GET request to %@ returned a %d response", url, responseCode]];
+            }
         } else {
-            [LotameLogger logError:[NSString stringWithFormat:@"GET request to %@ returned a %d response", url, responseCode]];
+            [LotameLogger logError:[NSString stringWithFormat:@"Error while making request to %@ : %@", url, [error localizedDescription]]];
         }
     };
 }

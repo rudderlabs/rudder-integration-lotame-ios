@@ -6,7 +6,7 @@
 //
 
 #import "RudderLotameIntegration.h"
-#import "RudderLogger.h"
+#import <Rudder/RSLogger.h>
 #import "LotameIntegration.h"
 #import "LotameLogger.h"
 
@@ -18,11 +18,11 @@ static LotameIntegration* lotameClient;
 
 #pragma mark - Initialization
 
-- (instancetype) initWithConfig:(NSDictionary *)config withAnalytics:(nonnull RudderClient *)client  withRudderConfig:(nonnull RudderConfig *)rudderConfig {
+- (instancetype) initWithConfig:(NSDictionary *)config withAnalytics:(nonnull RSClient *)client  withRudderConfig:(nonnull RSConfig *)rudderConfig {
     self = [super init];
     if(self){
         if (config != nil) {
-            [RudderLogger logDebug:@"Initializing Lotame SDK"];
+            [RSLogger logDebug:@"Initializing Lotame SDK"];
             
             bcpUrls = [self getUrlConfig:@"bcp" withConfig:config];
             dspUrls = [self getUrlConfig:@"dsp" withConfig:config];
@@ -33,7 +33,7 @@ static LotameIntegration* lotameClient;
 }
 
 
-- (void) dump:(RudderMessage *)message {
+- (void) dump:(RSMessage *)message {
     @try {
         if (message != nil) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -41,11 +41,11 @@ static LotameIntegration* lotameClient;
             });
         }
     } @catch (NSException *ex) {
-        [RudderLogger logError:[[NSString alloc] initWithFormat:@"%@", ex]];
+        [RSLogger logError:[[NSString alloc] initWithFormat:@"%@", ex]];
     }
 }
 
-- (void) processRudderEvent: (nonnull RudderMessage *) message {
+- (void) processRudderEvent: (nonnull RSMessage *) message {
     NSString* type = message.type;
     NSString* userId = [message userId];
     
@@ -54,21 +54,21 @@ static LotameIntegration* lotameClient;
             if (userId != nil) {
                 [lotameClient syncBcpAndDspUrls:userId withBcpUrls:bcpUrls withDspUrls:dspUrls];
             } else {
-                [RudderLogger logWarn:@"RudderIntegration: Lotame: screen: no userId found, not syncing any pixels" ];
+                [RSLogger logWarn:@"RudderIntegration: Lotame: screen: no userId found, not syncing any pixels" ];
             }
         }
         else if ([type isEqualToString:@"identify"]) {
             if (userId != nil) {
                 [lotameClient syncDspUrls:dspUrls withUserId:userId withForceSync:true];
             } else {
-                [RudderLogger logWarn:@"RudderIntegration: Lotame: identify: no userId found, not syncing any pixels" ];
+                [RSLogger logWarn:@"RudderIntegration: Lotame: identify: no userId found, not syncing any pixels" ];
             }
         }
         else {
-            [RudderLogger logDebug: [[NSString alloc] initWithFormat:@"RudderIntegration: Lotame: Message Type %@ not supported", type]] ;
+            [RSLogger logDebug: [[NSString alloc] initWithFormat:@"RudderIntegration: Lotame: Message Type %@ not supported", type]] ;
         }
     } else {
-        [RudderLogger logDebug:@"RudderIntegration: Lotame: processEvent: eventType null"];
+        [RSLogger logDebug:@"RudderIntegration: Lotame: processEvent: eventType null"];
     }
 }
 

@@ -7,7 +7,7 @@
 
 #import "RudderLotameFactory.h"
 #import "RudderLotameIntegration.h"
-#import "RudderLogger.h"
+#import <Rudder/RSLogger.h>
 
 @implementation RudderLotameFactory
 
@@ -25,8 +25,8 @@ static RudderLotameFactory *sharedInstance;
     return @"Lotame";
 }
 
-- (nonnull id<RudderIntegration>)initiate:(nonnull NSDictionary *)config client:(nonnull RudderClient *)client rudderConfig:(nonnull RudderConfig *)rudderConfig {
-    [RudderLogger logDebug:@"Creating RudderIntegrationFactory"];
+- (nonnull id<RSIntegration>)initiate:(nonnull NSDictionary *)config client:(nonnull RSClient *)client rudderConfig:(nonnull RSConfig *)rudderConfig {
+    [RSLogger logDebug:@"Creating RudderIntegrationFactory"];
     return [[RudderLotameIntegration alloc] initWithConfig:config withAnalytics:client withRudderConfig:rudderConfig];
 }
 
