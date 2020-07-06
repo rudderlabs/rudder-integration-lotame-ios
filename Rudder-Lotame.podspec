@@ -1,43 +1,23 @@
-#
-# Be sure to run `pod lib lint Rudder-Lotame.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'Rudder-Lotame'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Rudder-Lotame.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'Privacy and Security focused Segment-alternative. Lotame Native SDK integration support.'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Rudder is a platform for collecting, storing and routing customer event data to dozens of tools. Rudder is open-source, can run in your cloud environment (AWS, GCP, Azure or even your data-centre) and provides a powerful transformation framework to process your event data on the fly.
                        DESC
-
-  s.homepage         = 'https://github.com/dhawal-rudder/Rudder-Lotame'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'dhawal-rudder' => 'dhawal@rudderlabs.com' }
-  s.source           = { :git => 'https://github.com/dhawal-rudder/Rudder-Lotame.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.homepage         = 'https://github.com/rudderlabs/rudder-integration-lotame-ios'
+  s.license          = { :type => "Apache", :file => "LICENSE" }
+  s.author           = { 'RudderStack' => 'arnab@rudderlabs.com' }
+  s.source           = { :git => 'https://github.com/rudderlabs/rudder-integration-lotame-ios.git' , :commit => 'db5155f9a4d43464039acf4d9bca0e0e05b33e34'}
+  s.platform         = :ios, "9.0"
+  s.requires_arc = true
 
   s.ios.deployment_target = '8.0'
-
+                     
   s.source_files = 'Rudder-Lotame/Classes/**/*'
+
+  s.static_framework = true
   
   s.dependency 'Rudder'
-  # s.resource_bundles = {
-  #   'Rudder-Lotame' => ['Rudder-Lotame/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

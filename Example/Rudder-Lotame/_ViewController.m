@@ -19,9 +19,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [[RudderClient sharedInstance] identify:@"new user"];
-    [[RudderClient sharedInstance] track:@"new event"];
-    [[RudderClient sharedInstance] screen:@"new screen"];
+    [[RSClient sharedInstance] identify:@"new user"];
+    [[RSClient sharedInstance] track:@"new event"];
+    [[RSClient sharedInstance] screen:@"new screen"];
 }
 
 - (void)didReceiveMemoryWarning

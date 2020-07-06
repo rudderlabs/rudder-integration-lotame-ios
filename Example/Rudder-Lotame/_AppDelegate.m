@@ -18,11 +18,11 @@ static NSString *DATA_PLANE_URL = @"https://hosted.rudderlabs.com";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
-    [builder withEndPointUrl:DATA_PLANE_URL];
+    RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
+    [builder withDataPlaneUrl:DATA_PLANE_URL];
     [builder withFactory:[RudderLotameFactory instance]];
-    [builder withLoglevel:RudderLogLevelDebug];
-    [RudderClient getInstance:WRITE_KEY config:[builder build]];
+    [builder withLoglevel:RSLogLevelDebug];
+    [RSClient getInstance:WRITE_KEY config:[builder build]];
     [LotameIntegration registerCallback:^{
         // your custom code
     }];
