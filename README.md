@@ -17,13 +17,12 @@ Released under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 pod 'Rudder-Lotame'
 ```
 
-## Initialize ```RudderClient```
+## Initialize ```RSClient```
 Put this code in your ```AppDelegate.m``` file under the method ```didFinishLaunchingWithOptions```
 ```
 RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 [builder withDataPlaneUrl:DATA_PLANE_URL];
 [builder withFactory:[RudderLotameFactory instance]];
-[builder withLoglevel:RSLogLevelDebug];
 [RSClient getInstance:WRITE_KEY config:[builder build]];
 ```
 
