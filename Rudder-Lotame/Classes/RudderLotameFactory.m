@@ -22,7 +22,7 @@ static RudderLotameFactory *sharedInstance;
 }
 
 - (nonnull NSString *)key {
-    return @"Lotame";
+    return @"Lotame Mobile";
 }
 
 - (nonnull id<RSIntegration>)initiate:(nonnull NSDictionary *)config client:(nonnull RSClient *)client rudderConfig:(nonnull RSConfig *)rudderConfig {
