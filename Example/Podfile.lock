@@ -1,0 +1,23 @@
+PODS:
+  - Rudder (1.0.24)
+  - Rudder-Lotame (1.0.0):
+    - Rudder
+
+DEPENDENCIES:
+  - Rudder-Lotame (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Rudder
+
+EXTERNAL SOURCES:
+  Rudder-Lotame:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Rudder: 941cdf1a5c26fccf1fa92e9aac1b6685ae1d19f9
+  Rudder-Lotame: 3f35faf4218c1b5a9081eabd89ba8d22439a7990
+
+PODFILE CHECKSUM: 7662da3b6d1d120a42b489066cd104107987ef5e
+
+COCOAPODS: 1.11.2

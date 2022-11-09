@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		253C5AA1DE51F7EE92B0E6A1 /* Pods_Rudder_Lotame_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80376145A9FDEA6A0F657C25 /* Pods_Rudder_Lotame_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -21,9 +20,10 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		6F91A77012795E4B37B361E8 /* Pods_Rudder_Lotame_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF625788781B95C3B837D77 /* Pods_Rudder_Lotame_Example.framework */; };
+		6DDFE4837571F42B8B623373 /* Pods_Rudder_Lotame_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FA58ED4D4A5DBCDB113324 /* Pods_Rudder_Lotame_Example.framework */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		D60341DC1C31FF9A2D1CF90E /* Pods_Rudder_Lotame_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79C34DCDBDF16093140677CB /* Pods_Rudder_Lotame_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1BF625788781B95C3B837D77 /* Pods_Rudder_Lotame_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rudder_Lotame_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36E0987DEBBD4CAD1FA29F97 /* Pods-Rudder-Lotame_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-Lotame_Tests.release.xcconfig"; path = "Target Support Files/Pods-Rudder-Lotame_Tests/Pods-Rudder-Lotame_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		3D649FC0D6A3285D3527E7FC /* Pods-Rudder-Lotame_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-Lotame_Example.debug.xcconfig"; path = "Target Support Files/Pods-Rudder-Lotame_Example/Pods-Rudder-Lotame_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		48BBD2AAB09F8C6351C84345 /* Rudder-Lotame.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "Rudder-Lotame.podspec"; path = "../Rudder-Lotame.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5236232C0740F8E2E9FDCEB8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* Rudder-Lotame_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rudder-Lotame_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,13 +59,14 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		6F73032CFB72D8A994325862 /* Pods-Rudder-Lotame_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-Lotame_Tests.release.xcconfig"; path = "Target Support Files/Pods-Rudder-Lotame_Tests/Pods-Rudder-Lotame_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		80376145A9FDEA6A0F657C25 /* Pods_Rudder_Lotame_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rudder_Lotame_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C34DCDBDF16093140677CB /* Pods_Rudder_Lotame_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rudder_Lotame_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AB1513D53BC8419D48E7EE7C /* Pods-Rudder-Lotame_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-Lotame_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Rudder-Lotame_Tests/Pods-Rudder-Lotame_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		92FA58ED4D4A5DBCDB113324 /* Pods_Rudder_Lotame_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rudder_Lotame_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE32D4498ADFD2BFF990B438 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		B8B37B9B5A21DAF9A048C5AF /* Pods-Rudder-Lotame_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-Lotame_Example.debug.xcconfig"; path = "Target Support Files/Pods-Rudder-Lotame_Example/Pods-Rudder-Lotame_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		E71AC144A5CC16CE6B0B66A7 /* Pods-Rudder-Lotame_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-Lotame_Example.release.xcconfig"; path = "Target Support Files/Pods-Rudder-Lotame_Example/Pods-Rudder-Lotame_Example.release.xcconfig"; sourceTree = "<group>"; };
+		E0C18A58DF07B58CB0E52FE7 /* Pods-Rudder-Lotame_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-Lotame_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Rudder-Lotame_Tests/Pods-Rudder-Lotame_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F4D503CB583C7F1D7B19F5E6 /* Pods-Rudder-Lotame_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-Lotame_Example.release.xcconfig"; path = "Target Support Files/Pods-Rudder-Lotame_Example/Pods-Rudder-Lotame_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				6F91A77012795E4B37B361E8 /* Pods_Rudder_Lotame_Example.framework in Frameworks */,
+				6DDFE4837571F42B8B623373 /* Pods_Rudder_Lotame_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				253C5AA1DE51F7EE92B0E6A1 /* Pods_Rudder_Lotame_Tests.framework in Frameworks */,
+				D60341DC1C31FF9A2D1CF90E /* Pods_Rudder_Lotame_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +123,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				1BF625788781B95C3B837D77 /* Pods_Rudder_Lotame_Example.framework */,
-				80376145A9FDEA6A0F657C25 /* Pods_Rudder_Lotame_Tests.framework */,
+				92FA58ED4D4A5DBCDB113324 /* Pods_Rudder_Lotame_Example.framework */,
+				79C34DCDBDF16093140677CB /* Pods_Rudder_Lotame_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -188,10 +188,10 @@
 		797FDDCA7325D38763CF4278 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B8B37B9B5A21DAF9A048C5AF /* Pods-Rudder-Lotame_Example.debug.xcconfig */,
-				E71AC144A5CC16CE6B0B66A7 /* Pods-Rudder-Lotame_Example.release.xcconfig */,
-				AB1513D53BC8419D48E7EE7C /* Pods-Rudder-Lotame_Tests.debug.xcconfig */,
-				36E0987DEBBD4CAD1FA29F97 /* Pods-Rudder-Lotame_Tests.release.xcconfig */,
+				3D649FC0D6A3285D3527E7FC /* Pods-Rudder-Lotame_Example.debug.xcconfig */,
+				F4D503CB583C7F1D7B19F5E6 /* Pods-Rudder-Lotame_Example.release.xcconfig */,
+				E0C18A58DF07B58CB0E52FE7 /* Pods-Rudder-Lotame_Tests.debug.xcconfig */,
+				6F73032CFB72D8A994325862 /* Pods-Rudder-Lotame_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -203,11 +203,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "Rudder-Lotame_Example" */;
 			buildPhases = (
-				440FF2CA7DAD9D238C074602 /* [CP] Check Pods Manifest.lock */,
+				9DAECEE61CCEC5E8F114367F /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				1F9322B45C1E34C8A0636D06 /* [CP] Embed Pods Frameworks */,
+				2070F95AE8404033C027577A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,7 +222,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "Rudder-Lotame_Tests" */;
 			buildPhases = (
-				9F57B9AC7BD92F3E5830E8C1 /* [CP] Check Pods Manifest.lock */,
+				C81794BE874C01DF39D691B1 /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
@@ -295,7 +295,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1F9322B45C1E34C8A0636D06 /* [CP] Embed Pods Frameworks */ = {
+		2070F95AE8404033C027577A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -313,7 +313,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rudder-Lotame_Example/Pods-Rudder-Lotame_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		440FF2CA7DAD9D238C074602 /* [CP] Check Pods Manifest.lock */ = {
+		9DAECEE61CCEC5E8F114367F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -335,7 +335,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9F57B9AC7BD92F3E5830E8C1 /* [CP] Check Pods Manifest.lock */ = {
+		C81794BE874C01DF39D691B1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -491,7 +491,7 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8B37B9B5A21DAF9A048C5AF /* Pods-Rudder-Lotame_Example.debug.xcconfig */;
+			baseConfigurationReference = 3D649FC0D6A3285D3527E7FC /* Pods-Rudder-Lotame_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -507,7 +507,7 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E71AC144A5CC16CE6B0B66A7 /* Pods-Rudder-Lotame_Example.release.xcconfig */;
+			baseConfigurationReference = F4D503CB583C7F1D7B19F5E6 /* Pods-Rudder-Lotame_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -523,7 +523,7 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB1513D53BC8419D48E7EE7C /* Pods-Rudder-Lotame_Tests.debug.xcconfig */;
+			baseConfigurationReference = E0C18A58DF07B58CB0E52FE7 /* Pods-Rudder-Lotame_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -548,7 +548,7 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36E0987DEBBD4CAD1FA29F97 /* Pods-Rudder-Lotame_Tests.release.xcconfig */;
+			baseConfigurationReference = 6F73032CFB72D8A994325862 /* Pods-Rudder-Lotame_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
