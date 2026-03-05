@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RudderLotameIntegration : NSObject<RSIntegration>
+@interface RudderLotameIntegration: NSObject<RSIntegration>
 
 @property (nonatomic) BOOL sendEvents;
 
