@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithConfig:(NSDictionary *)config withAnalytics:(RSClient *)client withRudderConfig:(RSConfig*) rudderConfig;
 
-
 @end
 
 NS_ASSUME_NONNULL_END

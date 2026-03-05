@@ -32,7 +32,6 @@ static LotameIntegration* lotameClient;
     return self;
 }
 
-
 - (void) dump:(RSMessage *)message {
     @try {
         if (message != nil) {
@@ -134,7 +133,5 @@ static LotameIntegration* lotameClient;
 }
 
 @end
-
-
 
 
