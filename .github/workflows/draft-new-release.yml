@@ -104,7 +104,6 @@ jobs:
           files: |
             CHANGELOG.md
             package.json
-            package-lock.json
             README.md
           tag: 'v${{ steps.create-release.outputs.new_version }}'
 
