@@ -85,14 +85,14 @@ jobs:
           HUSKY: 0
         run: |
           npm i -g conventional-changelog-cli
-          SUMMARY=$(((npx conventional-changelog -u) 2>&1) | sed "s/*/<br> */g" | sed "s/#/ /g" | tr -d '\n' || true)
-          echo $SUMMARY
           echo "Current version: $CURRENT_VERSION_VALUE"
           echo "New version: $NEW_VERSION_VALUE"
           npx replace $CURRENT_VERSION_VALUE $NEW_VERSION_VALUE README.md
           echo ${{ steps.create-release.outputs.new_version }}
-          echo "commit_summary=$SUMMARY" >> $GITHUB_OUTPUT
           npx standard-version --skip.commit --skip.tag
+          SUMMARY=$(((npx conventional-changelog -u) 2>&1) | sed "s/*/<br> */g" | sed "s/#/ /g" | tr -d '\n' || true)
+          echo $SUMMARY
+          echo "commit_summary=$SUMMARY" >> $GITHUB_OUTPUT
 
       - name: Create verified commit and tag via GitHub API
         uses: ryancyq/github-signed-commit@e9f3b28c80da7be66d24b8f501a5abe82a6b855f # v1.2.0
