@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RudderLotameFactory: NSObject<RSIntegrationFactory>
+@interface RudderLotameFactory : NSObject<RSIntegrationFactory>
 
 + (instancetype) instance;
 
