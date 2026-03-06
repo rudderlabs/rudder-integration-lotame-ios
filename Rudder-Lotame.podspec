@@ -14,10 +14,10 @@ Pod::Spec.new do |s|
   s.license          = { :type => "ELv2", :file => "LICENSE.md" }
   s.author           = { 'RudderStack' => 'arnab@rudderlabs.com' }
   s.source           = { :git => 'https://github.com/rudderlabs/rudder-integration-lotame-ios.git' , :tag => "v#{s.version}" }
-  s.platform         = :ios, "12.0"
+  s.platform         = :ios, "9.0"
   s.requires_arc = true
 
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '8.0'
 
   s.source_files = 'Rudder-Lotame/Classes/**/*'
 
